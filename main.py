@@ -13,8 +13,6 @@ calculation = str()
 
 def add_button_value_to_calculation(value):
     global calculation
-    calculation = calculation + value
-    output_label['text'] = calculation
 
     if value == 'AC':
         calculation = str()
@@ -25,6 +23,9 @@ def add_button_value_to_calculation(value):
         calculate(calculation)
         calculation = str()
         return
+
+    calculation = calculation + value
+    output_label['text'] = calculation
 
 
 def calculate(calc):
