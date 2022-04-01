@@ -26,9 +26,6 @@ def add_button_value_to_calculation(value):
         calculation = str()
         return
 
-    calculation = calculation + value
-    output_label['text'] = calculation
-
 
 def calculate(calc):
     try:
@@ -54,7 +51,7 @@ output_label = tk.Label(text="Hallo")
 output_label.grid(row=0, columnspan=10)
 
 column_count = 0
-row_count = 0
+row_count = 1
 max_columns = 3
 
 for item in gui_items:
