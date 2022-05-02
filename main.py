@@ -3,7 +3,9 @@ import tkinter as tk
 
 app = tk.Tk()
 app.geometry("150x220+50+50")
+app.title("Taschenrechner")
 
+# Liste der Buttonbeschriftung
 gui_items = list()
 button_values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-',
                  '*', '/', '=', 'AC']
@@ -14,11 +16,12 @@ calculation = str()
 def add_button_value_to_calculation(value):
     global calculation
 
+    # Überprüfung ob AC gedrückt wurde
     if value == 'AC':
         calculation = str()
-        output_label['text'] = '...'
+        output_label['text'] = 'Bereit...'
         return
-
+    # Überprüfung ob = gedrückt wurde
     if value == '=':
         calculate(calculation)
         calculation = str()
@@ -48,9 +51,11 @@ def create_button(value):
 for val in button_values:
     create_button(val)
 
-output_label = tk.Label(text="Hallo")
+# Ergebnisausgabe
+output_label = tk.Label(text="Bereit...")
 output_label.grid(row=0, columnspan=10)
 
+# Ausrichtung der Buttons 
 column_count = 0
 row_count = 1
 max_columns = 3
